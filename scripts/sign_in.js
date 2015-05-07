@@ -1,6 +1,4 @@
-/* @file sign_in.js
- * @date 2014-09-29
- * @author Tony Florida
+/*
  * @brief Leverages ajax via javascript to support sign in
  */
 
@@ -41,11 +39,15 @@ function get_XmlHttp()
  */
 function ajax_sign_in_request()
 {
+   var email =  document.getElementById("email").value;
+   var password =  document.getElementById("password").value;
+
    // call the function for the XMLHttpRequest instance
    var request =  get_XmlHttp();
+
    // create pairs index=value with data that must be sent to server
-   var the_data = 'email=' + document.getElementById("email").value +
-	'&' + 'password=' + document.getElementById("password").value;
+   var the_data = 'email=' + email +
+	'&' + 'password=' + password;
 
    // set the request
    request.open("POST", "scripts/sign_in.php", true);

@@ -1,9 +1,8 @@
 <html>
 <head>
-	<title>Peericle - Sign In</title>
+	<title>Sign In</title>
 	<script type="text/javascript" src="scripts/sign_in.js"></script>
 	<meta name="description" content="Allows user to sign in.">
-	<meta name="author" content="Tony Florida">
 </head>
 <body>
 <form action="">

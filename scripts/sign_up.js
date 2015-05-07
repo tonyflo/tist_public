@@ -41,18 +41,23 @@ function get_XmlHttp()
  */
 function ajax_sign_up_request()
 {
+   var first_name = document.getElementById("first_name").value;
+   var last_name = document.getElementById("last_name").value;
+   var date_birth = document.getElementById("date_birth").value;
+   var gender_id = document.getElementById("gender_id").value;
+   var email = document.getElementById("email").value;
+   var password = document.getElementById("password").value;
+
    // call the function for the XMLHttpRequest instance
    var request =  get_XmlHttp();
+
    // create pairs index=value with data that must be sent to server
-   var the_data = 'title=' + document.getElementById("title").value +
-	'&' + 'first_name=' + document.getElementById("first_name").value +
-	'&' + 'last_name=' + document.getElementById("last_name").value +
-	'&' + 'email=' + document.getElementById("email").value +
-	'&' + 'phone=' + document.getElementById("phone").value +
-	'&' + 'password=' + document.getElementById("password").value +
-	'&' + 'dob=' + document.getElementById("dob").value +
-	'&' + 'topic_id=' + document.getElementById("topic_id").value +
-	'&' + 'gender=' + document.getElementById("gender").value;
+   var the_data = 'first_name=' + first_name +
+	'&' + 'last_name=' + last_name +
+	'&' + 'date_birth=' + date_birth +
+	'&' + 'gender_id=' + gender_id +
+	'&' + 'email=' + email +
+	'&' + 'password=' + password;
 
    // set the request
    request.open("POST", "scripts/sign_up.php", true);

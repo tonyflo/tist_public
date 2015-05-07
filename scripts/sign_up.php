@@ -1,28 +1,19 @@
 <?php
-/* @file sign_up.php
- * @date 2014-09-21
- * @author Tony Florida
- * @brief Allows a user to sign up for an account
+/*
+ * @brief Allows a guest to sign up for an account
  */
-   include "../../peericle_private/credentials.php";
-   include "../../peericle_private/account.php";
+include "../../tist_web_private/credentials.php";
+include "../../tist_web_private/account.php";
 
-   $table="USER";
+$first_name=$_POST["first_name"];
+$last_name=$_POST["last_name"];
+$date_birth=$_POST["date_birth"];
+$gender_id=$_POST["gender_id"];
+$email=$_POST["email"];
+$password=$_POST["password"];
 
-   $title=$_POST["title"];
-   $first_name=$_POST["first_name"];
-   $last_name=$_POST["last_name"];
-   $role=-1;//$_POST["role"]; //TODO
-   $email=$_POST["email"];
-   $phone=$_POST["phone"];
-   $password=$_POST["password"];
-   $dob=$_POST["dob"];
-   $topic_id=$_POST["topic_id"];
-   $gender=$_POST["gender"];
+echo sign_up($first_name, $last_name, $date_birth, $gender_id, $email, $password, $db);
 
-   echo sign_up($title, $first_name, $last_name, $role, $email, $phone, $password, $dob, $topic_id, $gender, $db, $table);
-
-   $db->close();
-
+$db->close();
 ?>
 
