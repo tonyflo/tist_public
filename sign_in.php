@@ -13,9 +13,7 @@
 	<br>
 </form>
 <button onclick="sign_in()" id="sign_in">Sign In</button>
-
 <p id="status"></p>
-
 </body>
 </html>
 
