@@ -7,7 +7,7 @@
 	<?php include "lists/get_list_of_states.php"; ?>
 </select>
 <!-- Second select box for institutions -->
-<select name="institution" id="institution_name" size="10" style="width: 300px" onClick="alert(this.options[this.options.selectedIndex].value + ' ' + this.options[this.options.selectedIndex].text)">
+<select name="institution" id="institution_name" size="10" style="width: 300px" onClick="location.href='../institution.php?institution_id=' + this.options[this.options.selectedIndex].value">
 </select>
 </form>
 
