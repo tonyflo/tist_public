@@ -33,6 +33,11 @@
     border-bottom: 5px solid #599a68;
     margin-bottom: 60px;
   }
+  
+  #wrapper {
+	font-size: 1em;
+	clear: both;
+  }
 
   
 }
