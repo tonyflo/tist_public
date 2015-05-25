@@ -18,15 +18,24 @@ LEFT BAR
 
 table {
 	margin-left: 0px;
-}
-}
 
-
+}
 
 
 
   /**********************************
-SCREEN SIZES ABOVE 100px (DESKTOPS)
+SIGN UP PAGE
+  ***********************************/
+
+
+#signup-wrapper {
+/*    max-width: 480px; */
+  }
+
+}
+
+  /**********************************
+SCREEN SIZES ABOVE 1000px (DESKTOPS)
   ***********************************/
 
 
@@ -81,4 +90,14 @@ LEFT BAR
 }
   
 }
+
+  /**********************************
+SIGN UP PAGE
+  ***********************************/
+
+
+#signup-wrapper{
+    max-width: 480px;
+  }
+
 
