@@ -1,4 +1,36 @@
-@media screen and (min-width: 660px) {
+
+  /**********************************
+  SCREEN SIZES BETWEEN 480px and 999px
+  ***********************************/
+
+
+@media screen and (min-width: 480px) and (max-width: 999px) {
+
+
+  /**********************************
+LEFT BAR
+  ***********************************/
+
+.left-bar {
+	display: block;
+	margin-left: 0px;
+}  
+
+table {
+	margin-left: 0px;
+}
+}
+
+
+
+
+
+  /**********************************
+SCREEN SIZES ABOVE 100px (DESKTOPS)
+  ***********************************/
+
+
+@media screen and (min-width: 1000px) {
 
   /**********************************
   HEADER
@@ -39,8 +71,14 @@
 	clear: both;
   }
 
+
+  /**********************************
+LEFT BAR
+  ***********************************/
+
+.left-bar {
+	display: block;	
+}
   
 }
-
-
 

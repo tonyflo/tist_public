@@ -75,8 +75,87 @@ nav a {
 
 
 /**********************************
-SIDE BAR
+LEFT SIDE BAR
 ***********************************/
+
+table {
+  max-width: 960px;
+  margin: 10px 20px;
+}
+
+caption {
+  font-size: 1.6em;
+  font-weight: 400;
+  padding: 10px 0;
+}
+
+thead th {
+  font-weight: 400;
+  background: #8a97a0;
+  color: #FFF;
+  text-align: center;
+}
+
+th {
+  font-weight: bold;
+  text-align: right;
+  padding: 10px;
+
+}
+
+tr {
+  background: #f4f7f8;
+  border-bottom: 1px solid #FFF;
+  margin-bottom: 5px;
+}
+
+tr:nth-child(even) {
+  background: #e8eeef;
+}
+
+td {
+  text-align: left;
+  padding: 5px;
+  font-weight: 300;
+}
+
+tfoot tr {
+  background: none;
+}
+
+tfoot td {
+  padding: 10px 2px;
+  font-size: 0.8em;
+  font-style: italic;
+  color: #8a97a0;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.left-bar {
+  font-family: 'Nunito', sans-serif;
+  color: #384047;
+  float: left;
+  display: none;
+}
+
+
+
+/**********************************
+RIGHT BAR
+***********************************/
+
+.right-bar {
+  font-family: 'Nunito', sans-serif;
+  color: #384047;
+  float: right;
+  display: none;
+  margin-left: 5%;
+}
 
 
 
