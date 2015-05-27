@@ -1,13 +1,14 @@
 <?php
+/*
+ * @brief This file should be included on the first line of every PHP file on
+ * the website.  This file displays a commom header across pages.
+ */
 session_start();
-require_once "session/session.php";
-// Get user session data
-$user_id=$_GET['user_id'];
-$first_name=$_GET['first_name'];
-$last_name=$_GET['last_name'];
-$email=$_GET['email'];
-session_init($user_id, $first_name, $last_name, $email);
-echo "<p>DEBUG:".$user_id.",".$first_name.",".$last_name.",".$email."</p>"
+$DEBUG=false;
+if($DEBUG) {
+	echo "<p>DEBUG: ".session_id()."</p>";
+	echo "<p>DEBUG: ".$_SESSION["user_id"].",".$_SESSION["first_name"].",".$_SESSION["last_name"].",".$_SESSION["email"]."</p>";
+}
 ?>
 <header>
 <a href="index.php" id="logo">
@@ -19,6 +20,8 @@ echo "<p>DEBUG:".$user_id.",".$first_name.",".$last_name.",".$email."</p>"
 		<li><a href="index.php" class="selected">Home</a></li>
 		<li><a href="browse.php">Browse</a></li>
 		<li><a href="account.php">Account</a></li>
+		<?php require_once "helpers/sign_in_or_out.php"; ?>
 	</ul>
 </nav>
+<?php require_once "helpers/welcome.php"; ?>
 </header>

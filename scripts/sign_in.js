@@ -86,9 +86,9 @@ function ajax_sign_in_request()
             var first_name = response[1];
             var last_name = response[2];
             var email = response[3];
-            document.getElementById("status").innerHTML =  "Welcome " + first_name;
+            document.getElementById("status").innerHTML =  "Welcome, " + first_name;
             document.getElementById("status").style.color="green";
-	    window.location.href = "index.php?user_id="+user_id+"&first_name="+first_name+"&last_name="+last_name+"&email="+email;
+	    window.location.href = "index.php";
          }
       }
    }
