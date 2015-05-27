@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+include "helpers/header.php";
+?>
 <html>
 <head>
 	<title><?php echo "INSERT TITLE HERE"?></title>
@@ -12,8 +14,7 @@
 </head>
 <body>
 <?php
-include "helpers/header.html";
-include "scripts/institution.php"; 
+include "scripts/institution.php";
 
 // Get institution data from the above include
 $name=$inst[0];
@@ -25,7 +26,6 @@ $state_abbrev=$inst[5];
 $zip_code=$inst[6];
 $city=$inst[7];
 
-	
 //////////////////////////////
 ///////   CONTENT    /////////
 //////////////////////////////
@@ -69,7 +69,7 @@ echo '
         <tr>
           <th scope="row">Zip Code:</th>
           <td>'.$zip_code.'</td>
-        </tr>		
+        </tr>
       </tbody>
     </table>
 </div>
@@ -110,7 +110,6 @@ echo '
     </table>
 </div>
 ';
-		
 
 ///////   FOOTER   /////////
 

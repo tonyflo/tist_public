@@ -62,9 +62,10 @@ function ajax_sign_in_request()
    // Check request status
    request.onreadystatechange = function()
    {
-      var response = request.responseText;
+      var response = JSON.parse(request.responseText);
+      var user_id = parseInt(response[0]);
       if (request.readyState == 4) {
-         if(response <= 0)
+         if(user_id <= 0)
          {
             document.getElementById("status").style.color="red";
             if(response == -5)
@@ -82,8 +83,12 @@ function ajax_sign_in_request()
          }
          else
          {
-            document.getElementById("status").innerHTML =  "Welcome";
+            var first_name = response[1];
+            var last_name = response[2];
+            var email = response[3];
+            document.getElementById("status").innerHTML =  "Welcome " + first_name;
             document.getElementById("status").style.color="green";
+	    window.location.href = "index.php?user_id="+user_id+"&first_name="+first_name+"&last_name="+last_name+"&email="+email;
          }
       }
    }
