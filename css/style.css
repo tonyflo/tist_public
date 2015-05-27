@@ -1,0 +1,190 @@
+
+/* Page Styles
+================================ */
+
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html,
+body {
+ height: 100%;
+}
+body {
+	font: normal 1.1em/1.5 sans-serif;
+	color: #222;
+	background-color: #edeff0;
+}
+
+/* Layout Element Colors
+================================ */
+
+.primary-content   { background-color: #fff; }
+.secondary-content { background-color: #cfc; }
+.extra-content { background-color: #cfc; }
+
+/* Header, Banner and Footer Layout
+================================ */
+
+.main-header {
+	padding: 15px;
+	min-height: 100px;
+}
+.main-nav li {
+	margin-top: 15px;
+}
+.main-logo a, 
+.main-nav a {
+	display: block;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	padding: 5px 15px;
+	border-radius: 5px;
+}
+.main-footer {
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+/* Column Layout
+================================ */
+
+.col {
+	padding: 20px;
+}
+.extra-content,
+.main-banner {
+	display: none;
+}
+
+/* Imagery
+================================ */
+
+.feat-img {
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: solid 1px;
+	padding: 5px;
+}
+
+/* Float Clearfix
+================================ */
+
+.group:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+/* Media Queries
+================================ */
+
+@media (min-width: 769px) {
+
+	.main-wrapper,
+	.content-row,
+	.col {
+	 height: 100%;
+	}
+
+	body {
+		padding-top: 100px;
+	}
+
+	/* Header, Banner and Footer Layout
+	================================ */
+
+	.main-header {
+		position: fixed;
+		width: 100%;
+		top: 0;
+		z-index: 100;
+	}
+	.main-logo,
+	.main-nav {
+		position: absolute;
+	}
+	.main-logo {
+		width: 150px;
+		top: 20px;
+		left: 20px;
+	}
+	.main-nav {
+		bottom: 30px;
+		right: 25px;
+	}
+	.main-nav li {
+		margin-right: 6px;
+		margin-left: 6px;
+		display: inline-block;
+	}
+	.main-banner {
+		background: #eee;
+		text-align: center;
+		padding: 50px 15px;
+	}
+	.main-banner h1 {
+		color: #555;
+	}
+	
+	.main-banner h3,
+	.main-banner p {
+		display: inline;
+	}
+
+	/* Column Layout
+	================================ */
+
+	.extra-content,
+	.main-banner {
+		display: block; /* Unhide from mobile view */
+	}
+
+	.content-row {
+		position: relative;
+	}
+	.col {
+		width: 30%;
+		position: absolute;
+	}
+	.primary-content {
+		width: 40%;
+		left: 30%;
+		text-align: center;
+	}
+	.primary-content p {
+		padding: 40px 0px;
+	}
+	.primary-content h4,
+	.primary-content p {
+		display: inline;
+	}
+	.col h3 {
+		padding-bottom: 30px;
+		font-size: 1.4em;
+	}
+	.secondary-content {
+		right: 0;
+		text-align: center;
+	}
+
+	.extra-content {
+		text-align: center;
+	}
+
+	/* Imagery
+	================================ */
+
+	.feat-img {
+		width: 50%;
+		float: left;
+		margin-right: 25px;
+	}
+	.col img{
+		width: 40%;
+		border-radius: 50%;
+	}
+}

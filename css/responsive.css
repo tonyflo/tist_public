@@ -34,6 +34,17 @@ SIGN UP PAGE
 
 }
 
+
+	.feat-img {
+		width: 50%;
+		float: left;
+		margin-right: 25px;
+	}
+	.col img{
+		width: 40%;
+		border-radius: 50%;
+	}
+
   /**********************************
 SCREEN SIZES ABOVE 1000px (DESKTOPS)
   ***********************************/
@@ -100,4 +111,14 @@ SIGN UP PAGE
     max-width: 480px;
   }
 
+  
+  	.feat-img {
+		width: 50%;
+		float: left;
+		margin-right: 25px;
+	}
+	.col img{
+		width: 40%;
+		border-radius: 50%;
+	}
 
