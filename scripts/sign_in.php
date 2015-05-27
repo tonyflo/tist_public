@@ -8,7 +8,7 @@ include "../../tist_web_private/account.php";
 $email=$_POST["email"];
 $password=$_POST["password"];
 
-echo sign_in($email, $password, $db);
+echo json_encode(sign_in($email, $password, $db));
 
 $db->close();
 ?>

@@ -9,7 +9,6 @@ $institution_id=$_GET["institution_id"];
 
 $inst=get_institution_data($institution_id, $db);
 
-
 $db->close();
 
 ?>
