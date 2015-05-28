@@ -3,9 +3,9 @@ include "helpers/header.php";
 ?>
 <html>
 <head>
-	<title><?php echo "INSERT TITLE HERE"?></title>
-	<meta name="description" content="Institution page">
-	<meta charset="utf-8">
+    <title><?php echo "INSERT TITLE HERE"?></title>
+    <meta name="description" content="Institution page">
+    <meta charset="utf-8">
     <link rel="stylesheet" href="css/normalize.css">
     <link href='http://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400italic,700italic,400,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/main.css">

@@ -121,6 +121,11 @@ body {
 		margin-left: 6px;
 		display: inline-block;
 	}
+	.below-banner {
+		background: #eee;
+		width: 100%;
+		text-align:center;
+	}
 	.main-banner {
 		background: #eee;
 		text-align: center;
