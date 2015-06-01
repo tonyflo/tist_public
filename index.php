@@ -19,7 +19,9 @@ include "helpers/header.php";
 
 	</div>
 	<div class="below-banner">
-		<button type="button">Get Involved</button>
+		<form action="wizard.php" method="">
+			<button type="submit">Get Involved</button>
+		</form>
 	</div>
 	<div class="content-row group">
 		<div class="extra-content col">
@@ -38,12 +40,12 @@ include "helpers/header.php";
 				<br>
 				<input type="radio" name="topic_selector" value="topic#6" checked>Topic #6
 				<br>
-				</form> 				
+				</form>
 		</div>
 		<div class="primary-content col">
 			<h3>News Feed</h3>
-			
-			<hr>				
+
+			<hr>
 			<a href="profile.php"><img src="img/nick.jpg" alt="Nick's Face"></a>
 		<a href="profile.php"><h4>Profile Name</h4></a> <p>from the </p> <a href="lab.php"><h4> Lab Name</h4></a>
 		<a href="project.php"><h4>Project Name</h4></a>

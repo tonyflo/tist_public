@@ -4,8 +4,12 @@
 <form name="select-institution">
 <!-- First select box for states -->
 <select name="state" id="state_abbrev" size="10" onChange="populate_institution()" style="width: 100px">
-	<?php include "lists/get_list_of_states.php"; ?>
+	<?php
+		$PUBLIC_ROOT=$_SERVER['DOCUMENT_ROOT']."/tist_web_public/";
+		include $PUBLIC_ROOT."helpers/lists/get_list_of_states.php";
+	?>
 </select>
+
 <!-- Second select box for institutions -->
 <select name="institution" id="institution_name" size="10" style="width: 300px" onClick="location.href='../institution.php?institution_id=' + this.options[this.options.selectedIndex].value">
 </select>
