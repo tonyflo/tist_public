@@ -19,18 +19,19 @@ include "helpers/header.php"
 	</div>
 	<div id="div_new_project">
 		<h3>New Project</h3>
+		<h4>Select an institution</h4>
 		<table border=1>
-		<tr><th>Choose Your Own</th><th>Choose a New One</th></tr>
+		<tr><th>Choose Your Own</th><th>Join Existing Institution</th></tr>
 		<tr>
 			<td><select id="list_of_user_institutions"><?php include $PUBLIC_ROOT."helpers/lists/get_list_of_user_institutions.php"; ?></select></td>
 			<td>
 				<form name="select-institution">
 				<!-- First select box for states -->
-				<select name="state" id="state_abbrev" size="10" onChange="populate_institution()" style="width: 100px">
+				<select id="state_abbrev" size="10" onChange="populate_institution()" style="width: 100px">
 					<?php include $PUBLIC_ROOT."helpers/lists/get_list_of_states.php"; ?>
 				</select>
 				<!-- Second select box for institutions -->
-				<select name="institution" id="institution_name" size="10" style="width: 300px"></select>
+				<select id="list_of_institutions" size="10" style="width: 300px"></select>
 				</form>
 			</td>
 		</tr>
@@ -40,6 +41,16 @@ include "helpers/header.php"
 		<h3>Existing Project</h3>
 		<p>NYI</p>
 	</div>
+	<div id="div_new_join_or_existing_lab">
+		<h3 id="selected_institution_name"></h3>
+		<h4>Select a lab</h4>
+		<table border=1>
+		<tr><th>Choose Your Own</th><th>Join Existing Lab</th><th>Create a New Lab</th></tr>
+		<tr>
+			<td><select id="list_of_user_labs"><?php include $PUBLIC_ROOT."helpers/lists/get_list_of_user_labs.php"; ?></select></td>
+			<td><select id="list_of_labs"></select></td>
+			<td><button type="button" id="btn_lab_new">Create New Lab</button></td>
+		</tr>
 	</div>
 </body>
 </html>

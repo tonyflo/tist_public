@@ -1,7 +1,7 @@
 function populate_institution() {
 	$.getJSON('helpers/lists/get_list_of_institutions.php', {state_abbrev: $('#state_abbrev').val()}, function (data) {
 
-		var select = $('#institution_name');
+		var select = $('#list_of_institutions');
 		var options = select.prop('options');
 		$('option', select).remove();
 
