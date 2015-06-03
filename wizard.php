@@ -27,11 +27,11 @@ include "helpers/header.php"
 			<td>
 				<form name="select-institution">
 				<!-- First select box for states -->
-				<select id="state_abbrev" size="10" onChange="populate_institution()" style="width: 100px">
+				<select id="state_abbrev" size="10" onChange="populate_institution()" style="width: 150px">
 					<?php include $PUBLIC_ROOT."helpers/lists/get_list_of_states.php"; ?>
 				</select>
 				<!-- Second select box for institutions -->
-				<select id="list_of_institutions" size="10" style="width: 300px"></select>
+				<select id="list_of_institutions" size="10" style="width: 350px"></select>
 				</form>
 			</td>
 		</tr>
