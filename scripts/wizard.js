@@ -46,21 +46,15 @@ $(document).ready(function(){
 
 	// Action when an institution is selected
 	$('#list_of_user_institutions').change(function() {
-		// Unselect state_abbrev and list_of_institutions
-		$("#state_abbrev option:selected").removeAttr("selected");
-		$("#list_of_institutions option:selected").removeAttr("selected");
+		$("#join_institution").hide();
 
 		// If a valid value is selected
-		if ($(this).val() != '-1') {
+		if ($(this).val() != -1) {
 			institution_selected(this.id);
+		} else {
+			$("#div_new_join_or_existing_lab").hide();
+			$("#join_institution").show();
 		}
-	});
-	$('#list_of_institutions').change(function() {
-		// Unselect list_of_user_institutions
-		$("#list_of_user_institutions option:selected").removeAttr("selected");
-
-		institution_selected(this.id);
-
 	});
 
 });

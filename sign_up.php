@@ -1,3 +1,6 @@
+<?php
+include "helpers/header.php";
+?>
 <html>
 <head>
     <title>Sign Up</title>
