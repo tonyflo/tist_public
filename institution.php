@@ -3,7 +3,7 @@ include "helpers/header.php";
 ?>
 <html>
 <head>
-    <title><?php echo "INSERT TITLE HERE"?></title>
+    <title><?php echo "Institution"?></title>
     <meta name="description" content="Institution page">
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/normalize.css">

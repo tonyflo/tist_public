@@ -18,11 +18,15 @@ include "helpers/header.php";
 		<p><a href="#List">List</a>, <a href="#Of">Of</a>, <a href="#Scientific">Scientific</a>, <a href="#Discipline">Disciplines</a> </p> 
 
 	</div>
+	
+	
 	<div class="below-banner">
 		<form action="wizard.php" method="">
 			<button type="submit">Get Involved</button>
 		</form>
 	</div>
+	
+	
 	<div class="content-row group">
 		<div class="extra-content col">
 			<h3>Topics</h3>
@@ -32,7 +36,7 @@ include "helpers/header.php";
 				<br>
 				<input type="radio" name="topic_selector" value="topic#2" checked>Topic #2
 				<br>
-				<input type="radio" name="topic_selector" value="topic#3 checked>Topic #3
+				<input type="radio" name="topic_selector" value="topic#3" checked>Topic #3
 				<br>
 				<input type="radio" name="topic_selector" value="topic#4" checked>Topic #4
 				<br>
