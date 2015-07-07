@@ -43,6 +43,11 @@ $(document).ready(function(){
 		$("#btn_project_existing").hide();
 		$("#div_new_join_or_existing_lab").hide();
 	});
+	$("#btn_lab_new").click(function(){
+		var inst_id = $('#list_of_user_institutions').val();
+		location.href='new_lab.php?' + inst_id;
+	});
+
 
 	// Action when an institution is selected
 	$('#list_of_user_institutions').change(function() {
