@@ -4,7 +4,7 @@ include "helpers/header.php";
 <html>
 <head>
 	<title>New Lab</title>
-	<script type="text/javascript" src="scripts/sign_in.js"></script>
+	<script type="text/javascript" src="scripts/new_lab.js"></script>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/selectors.css">
@@ -22,6 +22,7 @@ include "helpers/header.php";
 	<br>
 	Link to website: <input type="text" id="lab_link" value="">
 	<br>
+	<input type="hidden" id="user_id" value="<?php echo $_SESSION['user_id']; ?>">
 </form>
 <button onclick="new_lab()" id="new_lab">Create Lab</button>
 <p id="status"></p>

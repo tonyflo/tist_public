@@ -45,7 +45,7 @@ $(document).ready(function(){
 	});
 	$("#btn_lab_new").click(function(){
 		var inst_id = $('#list_of_user_institutions').val();
-		location.href='new_lab.php?' + inst_id;
+		location.href='new_lab.php?institution_id=' + inst_id;
 	});
 
 
