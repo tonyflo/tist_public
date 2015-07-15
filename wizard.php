@@ -19,7 +19,7 @@ include "helpers/header.php"
 	if($_SESSION["user_id"] > 0) {
 		// allow signed in user to use the wizard
 		echo '
-		<button type="button" id="btn_project_new">Create New Project</button>
+		<button type="button" id="btn_project_create_new">Create New Project</button>
 		<button type="button" id="btn_project_existing">Join Existing Project</button>
 		';
 	} else {
@@ -53,6 +53,18 @@ include "helpers/header.php"
 			<td><select id="list_of_labs"></select></td>
 			<td><button type="button" id="btn_lab_new">Create New Lab</button></td>
 		</tr>
+		</table>
+	</div>
+	<div id="div_new_join_or_existing_project">
+		<h3 id="selected_lab_name"></h3>
+		<h4>Select a project</h4>
+		<table border=1>
+		<tr><th>Join Existing Project</th><th>Create a New Project</th></tr>
+		<tr>
+			<td><select id="list_of_projects"></select></td>
+			<td><button type="button" id="btn_project_new">Create New Project</button></td>
+		</tr>
+		</table>
 	</div>
 </body>
 </html>
