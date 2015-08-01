@@ -16,13 +16,7 @@ include "helpers/header.php"
 	<h1 style="color:black">Get Involved</h1>
 	<div id="div_new_or_existing">
 	<?php
-	if($_SESSION["user_id"] > 0) {
-		// allow signed in user to use the wizard
-		echo '
-		<button type="button" id="btn_project_create_new">Create New Project</button>
-		<button type="button" id="btn_project_existing">Join Existing Project</button>
-		';
-	} else {
+	if($_SESSION["user_id"] <= 0 || !isset($_SESSION["user_id"])) {
 		// require a guest sign in first
 		echo '
 		<h3>Sorry, but you must sign in first</h3>
@@ -34,20 +28,15 @@ include "helpers/header.php"
 	?>
 	</div>
 	<div id="div_new_project">
-		<h2 style="color:green">New Project</h2>
 		<h4>Select an institution</h4>
 		<select id="list_of_user_institutions"><?php include $PUBLIC_ROOT."helpers/lists/get_list_of_user_institutions.php"; ?></select>
 		<form id="join_institution" action='join_institution.php'>Don't see your institution listed above? Become an official member of your institution now! <input type='submit' value="Join Institution"></form>
-	</div>
-	<div id="div_existing_project">
-		<h2 style="color:green">Existing Project</h2>
-		<p>NYI</p>
 	</div>
 	<div id="div_new_join_or_existing_lab">
 		<h3 id="selected_institution_name"></h3>
 		<h4>Select a lab</h4>
 		<table border=1>
-		<tr><th>Choose Your Own</th><th>Join Existing Lab</th><th>Create a New Lab</th></tr>
+		<tr><th>Choose Your Own</th><th>Join A New Lab</th><th>Create a New Lab</th></tr>
 		<tr>
 			<td><select id="list_of_user_labs"><?php include $PUBLIC_ROOT."helpers/lists/get_list_of_user_labs.php"; ?></select></td>
 			<td><select id="list_of_labs"></select></td>
@@ -59,9 +48,9 @@ include "helpers/header.php"
 		<h3 id="selected_lab_name"></h3>
 		<h4>Select a project</h4>
 		<table border=1>
-		<tr><th>Join Existing Project</th><th>Create a New Project</th></tr>
+		<tr><th>Join A New Project</th><th>Create a New Project</th></tr>
 		<tr>
-			<td><select id="list_of_projects"></select></td>
+			<td><select id="list_of_projects"></select><button id="btn_join_project">Join</button></td>
 			<td><button type="button" id="btn_project_new">Create New Project</button></td>
 		</tr>
 		</table>

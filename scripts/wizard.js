@@ -48,28 +48,12 @@ function lab_selected(id) {
 // Executed when page loads
 $(document).ready(function(){
 	// Hide all elements intitally
-	$("#div_new_project").hide();
-	$("#div_existing_project").hide();
+	$("#div_new_project").show();
 	$("#div_new_join_or_existing_lab").hide();
 	$("#div_new_join_or_existing_project").hide();
+	$("#btn_join_project").hide();
 
 	// Action when buttons are clicked
-	$("#btn_project_create_new").click(function(){
-		$("#div_new_project").show();
-		$("#div_existing_project").hide();
-		$("#btn_project_create_new").hide();
-		$("#btn_project_existing").hide();
-		$("#div_new_join_or_existing_lab").hide();
-		$("#div_new_join_or_existing_project").hide();
-	});
-	$("#btn_project_existing").click(function(){
-		$("#div_new_project").hide();
-		$("#div_existing_project").show();
-		$("#btn_project_create_new").hide();
-		$("#btn_project_existing").hide();
-		$("#div_new_join_or_existing_lab").hide();
-		$("#div_new_join_or_existing_project").hide();
-	});
 	$("#btn_lab_new").click(function(){
 		var inst_id = $('#list_of_user_institutions').val();
 		location.href='new_lab.php?institution_id=' + inst_id;
@@ -86,6 +70,11 @@ $(document).ready(function(){
 		}
 		location.href='new_project.php?institution_id=' + inst_id + '&lab_id=' + lab_id;
 	});
+	$("#btn_join_project").click(function(){
+		var project_id = $('#list_of_projects').val();
+		location.href='join_project.php?project_id=' + project_id;
+	});
+
 
 	// Action when an institution is selected
 	$('#list_of_user_institutions').change(function() {
@@ -124,6 +113,16 @@ $(document).ready(function(){
 		}
 	});
 
+	// Action when a project is selected
+	$('#list_of_projects').change(function() {
+
+		// If a valid value is selected
+		if ($(this).val() != -1) {
+			$("#btn_join_project").show();
+		} else {
+			$("#btn_join_project").hide();
+		}
+	});
 
 
 });
