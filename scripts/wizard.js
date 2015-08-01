@@ -72,7 +72,13 @@ $(document).ready(function(){
 	});
 	$("#btn_join_project").click(function(){
 		var project_id = $('#list_of_projects').val();
-		location.href='join_project.php?project_id=' + project_id;
+		var project_name = $('#list_of_projects option:selected').text();
+		var lab_name = $("#selected_lab_name").text();
+		var institution_name = $("#selected_institution_name").text();
+		location.href='join_project.php?project_id=' + project_id
+			+ '&project_name=' + project_name
+			+ '&lab_name=' + lab_name
+			+ '&institution_name=' + institution_name;
 	});
 
 
