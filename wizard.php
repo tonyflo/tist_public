@@ -23,7 +23,10 @@ include "helpers/header.php"
 		<form action="sign_in.php">
 		    <input type="submit" value="Sign In">
 		</form>
+		</body>
+		</html>
 		';
+		return;
 	}
 	?>
 	</div>
