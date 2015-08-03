@@ -1,72 +1,110 @@
-var reached_leaf = false;
+/*
+ * @brief Leverages ajax via javascript to support new project
+ */
 
-// Action when a discipline is selected
-function discipline_selected(discipline_id) {
-	// Based on the selected discipline, query the db for the next level of sub-disciplines
-	$.getJSON('helpers/lists/get_list_of_disciplines.php', {discipline_id: discipline_id}, function (data) {
-		// if we get back more than the default "Select a discipline", re-populate
-		if(data.length > 1) {
-			var select = $('#list_of_disciplines');
-			var options = select.prop('options');
-			$('option', select).remove();
-			$.each(data, function (index, array) {
-				//Option(text, value)
-				var discipline = new Option(array[1], array[0]);
-				options[options.length] = discipline;
-			});
-		} else {
-			reached_leaf = true;
-			$("#selected_discipline_status").show();
-		}
-	});
-}
-
-function modify_drilldown_text(new_text) {
-	var drilldown = $("#selected_discipline_drilldown").text();
-	var start = drilldown.lastIndexOf(">");
-	var replace = drilldown.substr(start);
-	var res;
-	if(new_text == "") {
-		res = drilldown.replace(replace, new_text);
-	} else {
-		res = drilldown.replace(replace, " > " + new_text);
-	}
-	$("#selected_discipline_drilldown").text(res);
-}
-
-function start_over()
+/* @brief The event handler that reacts to the join project button being pressed
+ */
+function join_the_project()
 {
-	reached_leaf = false;
-	$("#selected_discipline_status").hide();
-	var academia_id = 1;
-	discipline_selected(academia_id);
-	$("#selected_discipline_drilldown").text("Academia");
-}
+   document.getElementById("status").style.color="blue";
+   document.getElementById("status").innerHTML = "Working...";
+   ajax_join_project_request();
+} //end join_the_project()
 
-// Executed when page loads
-$(document).ready(function(){
-	start_over();
-	// Action when a discipline is selected
-	$('#list_of_disciplines').change(function() {
-		// If a valid value is selected
-		var dis_id = $(this).val();
-		var dis_name = $('#list_of_disciplines option:selected').text();
-		if (dis_id != -1) {
-			if(reached_leaf) {
-				// user drilled all the way down a branch, then change what
-				// leaf they are looking at
-				modify_drilldown_text(dis_name);
-			} else {
-				discipline_selected(dis_id);
-				$("#selected_discipline_drilldown").append(" > " + dis_name);
-			}
-			$("#selected_discipline_id").val(dis_id);
-		} else {
-			if(reached_leaf) {
-				modify_drilldown_text("");
-				reached_leaf = false;
-				$("#selected_discipline_status").hide();
-			}
-		}
-	});
-});
+/* @brief Create the XMLHttpRequest object, according browser
+ */
+function get_XmlHttp()
+{
+   // create the variable that will contain the instance of the
+   // XMLHttpRequest object (initially with null value)
+   var xmlHttp = null;
+
+   // for Forefox, IE7+, Opera, Safari, ...
+   if(window.XMLHttpRequest)
+   {
+      xmlHttp = new XMLHttpRequest();
+   }
+   // for Internet Explorer 5 or 6
+   else if(window.ActiveXObject)
+   {
+      xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+   }
+
+   return xmlHttp;
+} //end get_XmlHttp()
+
+/* @brief Sends data to a php file, via POST, and displays the received answer.
+ * Specifically, queries the db given an email and password and returns a valid
+ * pk
+ */
+function ajax_join_project_request()
+{
+   var job_title = document.getElementById("job_title").value;
+   var discipline_id = document.getElementById("selected_discipline_id").value;
+   var contribution_description = document.getElementById("contribution_description").value;
+   var date_start = document.getElementById("date_start").value;
+   var date_end = document.getElementById("date_end").value;
+   var user_id = document.getElementById("user_id").value;
+   var lab_id = document.getElementById("lab_id").value;
+   var project_id = document.getElementById("project_id").value;
+
+   // call the function for the XMLHttpRequest instance
+   var request =  get_XmlHttp();
+
+   // create pairs index=value with data that must be sent to server
+   var the_data = 'job_title=' + job_title +
+	'&' + 'discipline_id=' + discipline_id +
+	'&' + 'contribution_description=' + contribution_description +
+	'&' + 'date_start=' + date_start +
+	'&' + 'date_end=' + date_end +
+	'&' + 'project_id=' + project_id +
+	'&' + 'lab_id=' + lab_id +
+	'&' + 'user_id=' + user_id;
+
+   // set the request
+   request.open("POST", "scripts/join_project.php", true);
+
+   //adds a header to tell the PHP script to recognize the data as is sent
+   //via POST
+   request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+   // calls the send() method with datas as parameter
+   request.send(the_data);
+
+   // Check request status
+   request.onreadystatechange = function()
+   {
+      var response = request.responseText;
+      if (request.readyState == 4) {
+         if(response <= 0)
+         {
+            document.getElementById("status").style.color="red";
+            if(response == -4)
+            {
+               document.getElementById("status").innerHTML = "Missing information";
+            }
+            else if(response == -13)
+            {
+               document.getElementById("status").innerHTML = "Unable to associate user with lab";
+            }
+            else if(response == -18)
+            {
+               document.getElementById("status").innerHTML = "Unable to associate the user with project";
+            }
+            else if(response == -19)
+            {
+               document.getElementById("status").innerHTML = "No relationship between project and lab";
+            }
+            else
+            {
+               document.getElementById("status").innerHTML = "Unknown error";
+            }
+         }
+         else
+         {
+            document.getElementById("status").innerHTML =  "Project joined";
+            document.getElementById("status").style.color="green";
+         }
+      }
+   }
+} //end ajax_join_project_request()

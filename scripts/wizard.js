@@ -41,6 +41,7 @@ function lab_selected(id) {
 
 	// Set the header text to the lab name and show the project div
 	$("#selected_lab_name").text(lab_name);
+	$("#selected_lab_id").text(lab_id);
 	$("#div_new_join_or_existing_project").show();
 }
 
@@ -52,6 +53,7 @@ $(document).ready(function(){
 	$("#div_new_join_or_existing_lab").hide();
 	$("#div_new_join_or_existing_project").hide();
 	$("#btn_join_project").hide();
+	$("#selected_lab_id").hide();
 
 	// Action when buttons are clicked
 	$("#btn_lab_new").click(function(){
@@ -74,10 +76,12 @@ $(document).ready(function(){
 		var project_id = $('#list_of_projects').val();
 		var project_name = $('#list_of_projects option:selected').text();
 		var lab_name = $("#selected_lab_name").text();
+		var lab_id = $("#selected_lab_id").text();
 		var institution_name = $("#selected_institution_name").text();
 		location.href='join_project.php?project_id=' + project_id
 			+ '&project_name=' + project_name
 			+ '&lab_name=' + lab_name
+			+ '&lab_id=' + lab_id
 			+ '&institution_name=' + institution_name;
 	});
 

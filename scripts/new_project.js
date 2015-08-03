@@ -4,12 +4,12 @@
 
 /* @brief The event handler that reacts to the new project button being pressed
  */
-function new_project()
+function create_new_project()
 {
    document.getElementById("status").style.color="blue";
    document.getElementById("status").innerHTML = "Working...";
    ajax_new_project_request();
-} //end new_project()
+} //end create_new_project()
 
 /* @brief Create the XMLHttpRequest object, according browser
  */
@@ -92,7 +92,7 @@ function ajax_new_project_request()
             }
             else if(response == -13)
             {
-               document.getElementById("status").innerHTML = "Unable to associate user with member";
+               document.getElementById("status").innerHTML = "Unable to associate user with lab";
             }
             else if(response == -14)
             {

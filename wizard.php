@@ -49,6 +49,7 @@ include "helpers/header.php"
 	</div>
 	<div id="div_new_join_or_existing_project">
 		<h3 id="selected_lab_name"></h3>
+		<h3 id="selected_lab_id"></h3>
 		<h4>Select a project</h4>
 		<table border=1>
 		<tr><th>Join A Project</th><th>Create a New Project</th></tr>
