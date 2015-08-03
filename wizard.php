@@ -39,7 +39,7 @@ include "helpers/header.php"
 		<h3 id="selected_institution_name"></h3>
 		<h4>Select a lab</h4>
 		<table border=1>
-		<tr><th>Choose Your Own</th><th>Join A New Lab</th><th>Create a New Lab</th></tr>
+		<tr><th>Your Labs</th><th>Join A Lab</th><th>Create a New Lab</th></tr>
 		<tr>
 			<td><select id="list_of_user_labs"><?php include $PUBLIC_ROOT."helpers/lists/get_list_of_user_labs.php"; ?></select></td>
 			<td><select id="list_of_labs"></select></td>
@@ -51,7 +51,7 @@ include "helpers/header.php"
 		<h3 id="selected_lab_name"></h3>
 		<h4>Select a project</h4>
 		<table border=1>
-		<tr><th>Join A New Project</th><th>Create a New Project</th></tr>
+		<tr><th>Join A Project</th><th>Create a New Project</th></tr>
 		<tr>
 			<td><select id="list_of_projects"></select><button id="btn_join_project">Join</button></td>
 			<td><button type="button" id="btn_project_new">Create New Project</button></td>

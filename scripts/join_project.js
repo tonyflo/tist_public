@@ -65,6 +65,7 @@ $(document).ready(function(){
 			if(reached_leaf) {
 				modify_drilldown_text("");
 				reached_leaf = false;
+				$("#selected_discipline_status").hide();
 			}
 		}
 	});
