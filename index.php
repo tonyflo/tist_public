@@ -18,8 +18,6 @@ include "helpers/header.php";
 		<p><a href="#List">List</a>, <a href="#Of">Of</a>, <a href="#Scientific">Scientific</a>, <a href="#Discipline">Disciplines</a> </p> 
 
 	</div>
-	
-	
 	<div class="below-banner">
 		<form action="wizard.php" method="">
 			<button type="submit">Get Involved</button>
